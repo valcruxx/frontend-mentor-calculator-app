@@ -10,7 +10,6 @@ const button = Array.from(document.getElementsByClassName("button"));
 const reset = document.getElementById("reset");
 const equal = document.getElementById("equal");
 const del = document.getElementById("del");
-var cal = "";
 
 theme1.addEventListener("click", ()=>{
     theme1.style.opacity = "1";
