@@ -99,14 +99,14 @@ button.map(button => button.addEventListener("click", (e)=>{
                 break;
         case "=":
                     try {
-                        display.innerText = eval(display.innerText)
+                        display.innerText = Number(eval(display.innerText)).toLocaleString()
                     } catch {
                         display.innerText= "Syntax Error"
                     }
            break; 
         default:
             cal += e.target.innerText;
-            display.innerText += Number(e.target.innerText).toLocaleString()
+            display.innerText +=e.target.innerText
             break;
     }
 }))
