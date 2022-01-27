@@ -104,7 +104,6 @@ button.map(button => button.addEventListener("click", (e)=>{
                     }
            break; 
         default:
-            cal += e.target.innerText;
             display.innerText +=e.target.innerText
             break;
     }
