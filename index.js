@@ -98,7 +98,7 @@ button.map(button => button.addEventListener("click", (e)=>{
                 break;
         case "=":
                     try {
-                        display.innerText = Number(eval(display.innerText)).toLocaleString()
+                        display.innerText = eval(display.innerText)
                     } catch {
                         display.innerText= "Syntax Error"
                     }
