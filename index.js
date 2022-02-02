@@ -10,6 +10,7 @@ const button = Array.from(document.getElementsByClassName("button"));
 const reset = document.getElementById("reset");
 const equal = document.getElementById("equal");
 const del = document.getElementById("del");
+var cal = document.getElementById("calculate");
 
 theme1.addEventListener("click", ()=>{
     theme1.style.opacity = "1";
@@ -86,25 +87,31 @@ theme3.addEventListener("click", ()=>{
 
 button.map(button => button.addEventListener("click", (e)=>{
     switch (e.target.innerText){
-        case "x":
-            display.innerText += "*"
-            break;
         case "DEL":
             if(display.innerText){
-            display.innerText= display.innerText.slice(0,-1);}
+            display.innerText= display.innerText.slice(0,-1)};
+            if(cal.innerText){
+                cal.innerText= cal.innerText.slice(0,-1)};    
             break; 
+        case "x":
+            cal.innerText += "*"
+            display.innerText += e.target.innerText
+            break;    
         case "RESET":
                 display.innerText = ""
+                cal.innerText = ""
                 break;
         case "=":
                     try {
-                        display.innerText = eval(display.innerText)
+                        cal.innerText =eval(cal.innerText)
                     } catch {
-                        display.innerText= "Syntax Error"
+                        cal.innerText= "Syntax Error"
                     }
+                    display.innerText = Number(cal.innerText).toLocaleString();
            break; 
         default:
-            display.innerText +=e.target.innerText
+            display.innerText += e.target.innerText;
+            cal.innerText += e.target.innerText;
             break;
     }
-}))
+}));
