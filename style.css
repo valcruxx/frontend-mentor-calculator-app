@@ -82,6 +82,9 @@ body {
   border-radius: 10px;
   margin: 20px 0;
 }
+#calculate{
+  display: none;
+}
 #button-div {
   width: 430px;
   display: grid;
